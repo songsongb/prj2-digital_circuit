@@ -1,0 +1,48 @@
+module RV32I (CLK, RSTN, PC, INSTR, MEMWRITE, ALURESULT, WRITEDATA, READDATA);
+  input  CLK, RSTN;
+  output [31:0] PC;
+  input  [31:0] INSTR;
+  output        MEMWRITE;
+  output [31:0] ALURESULT, WRITEDATA;
+  input  [31:0] READDATA;
+
+  wire        ALUSRC, REGWRITE, JUMP, JALR, ZERO, PCSRC;
+  wire [1:0]  RESULTSRC;
+  wire [2:0]  IMMSRC;
+  wire [3:0]  ALUCONTROL;   // 3 → 4 비트
+
+  CONTROLLER CTRL (
+    .OP(INSTR[6:0]),
+    .FUNCT3(INSTR[14:12]),
+    .FUNCT7B5(INSTR[30]),
+    .ZERO(ZERO),
+    .LT(ALURESULT[0]),       // 분기 a<b 판정 (SLT/SLTU 결과 LSB)
+    .RESULTSRC(RESULTSRC),
+    .MEMWRITE(MEMWRITE),
+    .PCSRC(PCSRC),
+    .ALUSRC(ALUSRC),
+    .REGWRITE(REGWRITE),
+    .JUMP(JUMP),
+    .JALR(JALR),
+    .IMMSRC(IMMSRC),
+    .ALUCONTROL(ALUCONTROL)
+  );
+
+  DATAPATH DP (
+    .CLK(CLK),
+    .RESET(RSTN),
+    .RESULTSRC(RESULTSRC),
+    .PCSRC(PCSRC),
+    .ALUSRC(ALUSRC),
+    .REGWRITE(REGWRITE),
+    .JALR(JALR),
+    .IMMSRC(IMMSRC),
+    .ALUCONTROL(ALUCONTROL),
+    .ZERO(ZERO),
+    .PC(PC),
+    .INSTR(INSTR),
+    .ALURESULT(ALURESULT),
+    .WRITEDATA(WRITEDATA),
+    .READDATA(READDATA)
+  );
+endmodule
