@@ -1,0 +1,2 @@
+Warning (10273): Verilog HDL warning at EXTEND.v(20): extended using "x" or "z"
+Info (10281): Verilog HDL Declaration information at DATAPATH.v(17): object "PC" differs only in case from object "pc" in the same scope

@@ -1,0 +1,53 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'CLOCK_50'
+Slack : -6.206
+TNS   : -24701.327
+
+Type  : Slow Model Setup 'u_ov7670_lcm_wall_core|u0|altpll_component|pll|clk[0]'
+Slack : 30.157
+TNS   : 0.000
+
+Type  : Slow Model Hold 'CLOCK_50'
+Slack : 0.391
+TNS   : 0.000
+
+Type  : Slow Model Hold 'u_ov7670_lcm_wall_core|u0|altpll_component|pll|clk[0]'
+Slack : 0.391
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'CLOCK_50'
+Slack : 9.000
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'u_ov7670_lcm_wall_core|u0|altpll_component|pll|clk[0]'
+Slack : 25.015
+TNS   : 0.000
+
+Type  : Fast Model Setup 'CLOCK_50'
+Slack : 8.241
+TNS   : 0.000
+
+Type  : Fast Model Setup 'u_ov7670_lcm_wall_core|u0|altpll_component|pll|clk[0]'
+Slack : 43.841
+TNS   : 0.000
+
+Type  : Fast Model Hold 'CLOCK_50'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Hold 'u_ov7670_lcm_wall_core|u0|altpll_component|pll|clk[0]'
+Slack : 0.215
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'CLOCK_50'
+Slack : 9.000
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'u_ov7670_lcm_wall_core|u0|altpll_component|pll|clk[0]'
+Slack : 25.015
+TNS   : 0.000
+
+------------------------------------------------------------
